@@ -1,7 +1,6 @@
 export default function Home() {
   return (
     <div className="min-h-screen bg-[conic-gradient(at_top_right,_var(--tw-gradient-stops))] from-indigo-200 via-purple-300 to-pink-200 dark:from-indigo-900 dark:via-purple-900 dark:to-pink-900 flex items-center justify-center p-4 relative overflow-hidden">
-      {/* Background decorative elements */}
       <div className="absolute w-96 h-96 bg-purple-400/30 dark:bg-purple-600/30 rounded-full blur-3xl -top-20 -right-20"></div>
       <div className="absolute w-96 h-96 bg-pink-400/30 dark:bg-pink-600/30 rounded-full blur-3xl -bottom-20 -left-20"></div>
 
