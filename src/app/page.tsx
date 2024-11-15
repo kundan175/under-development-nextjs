@@ -2,100 +2,84 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <div className="min-h-screen bg-[conic-gradient(at_top_right,_var(--tw-gradient-stops))] from-indigo-200 via-purple-300 to-pink-200 dark:from-indigo-900 dark:via-purple-900 dark:to-pink-900 flex items-center justify-center p-4 relative overflow-hidden">
+      {/* Background decorative elements */}
+      <div className="absolute w-96 h-96 bg-purple-400/30 dark:bg-purple-600/30 rounded-full blur-3xl -top-20 -right-20"></div>
+      <div className="absolute w-96 h-96 bg-pink-400/30 dark:bg-pink-600/30 rounded-full blur-3xl -bottom-20 -left-20"></div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      <div className="max-w-3xl w-full backdrop-blur-lg bg-white/30 dark:bg-gray-900/30 rounded-3xl shadow-2xl p-8 mx-auto relative overflow-hidden border border-white/20">
+        {/* Glassmorphism card content */}
+        <div className="relative z-10 flex flex-col items-center text-center space-y-10">
+          {/* Animated Logo */}
+          <div className="relative w-32 h-32 mb-4">
+            <div className="absolute inset-0 animate-[spin_8s_linear_infinite]">
+              <div className="w-full h-full rounded-full bg-gradient-to-r from-violet-600 to-indigo-600 p-1">
+                <div className="w-full h-full rounded-full bg-gradient-to-r from-fuchsia-500 to-pink-500 p-1">
+                  <div className="w-full h-full rounded-full bg-white dark:bg-gray-900 flex items-center justify-center">
+                    <svg
+                      className="w-16 h-16 text-transparent bg-clip-text bg-gradient-to-r from-violet-600 to-pink-600"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10zm0-2a8 8 0 100-16 8 8 0 000 16z" />
+                      <path d="M12 8v4l3 3" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Main Heading with gradient animation */}
+          <div className="space-y-4">
+            <h1 className="text-5xl sm:text-6xl font-bold animate-gradient bg-gradient-to-r from-violet-600 via-fuchsia-500 to-pink-600 bg-clip-text text-transparent bg-300% dark:from-violet-400 dark:via-fuchsia-300 dark:to-pink-400">
+              Under Development
+            </h1>
+            <p className="text-gray-700 dark:text-gray-200 text-xl sm:text-2xl max-w-xl mx-auto leading-relaxed font-light">
+              Something extraordinary is in the works. We're crafting a
+              masterpiece just for you.
+            </p>
+          </div>
+
+          {/* Progress Indicator */}
+          <div className="w-full max-w-md space-y-4">
+            <div className="relative h-3 bg-white/30 dark:bg-gray-700/30 rounded-full overflow-hidden">
+              <div className="absolute top-0 left-0 h-full w-2/3 bg-gradient-to-r from-violet-600 via-fuchsia-500 to-pink-600 rounded-full animate-pulse"></div>
+            </div>
+            <p className="text-gray-700 dark:text-gray-200 font-medium">
+              Progress: 65% Complete
+            </p>
+          </div>
+
+          {/* Feature Cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 w-full mt-8">
+            {[
+              { title: "Innovation", icon: "✨" },
+              { title: "Excellence", icon: "🎯" },
+              { title: "Reliability", icon: "🛡️" },
+            ].map((feature) => (
+              <div
+                key={feature.title}
+                className="group p-6 rounded-2xl bg-white/20 dark:bg-gray-800/20 backdrop-blur-sm border border-white/10 dark:border-gray-700/30 hover:bg-white/30 dark:hover:bg-gray-700/30 transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-xl"
+              >
+                <div className="text-3xl mb-3">{feature.icon}</div>
+                <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-2">
+                  {feature.title}
+                </h3>
+                <div className="h-1 w-12 bg-gradient-to-r from-violet-600 to-pink-600 rounded-full group-hover:w-full transition-all duration-300"></div>
+              </div>
+            ))}
+          </div>
+
+          {/* Coming Soon Badge */}
+          <div className="mt-12 inline-flex items-center px-6 py-2 rounded-full bg-gradient-to-r from-violet-600/10 to-pink-600/10 border border-violet-600/20 dark:border-violet-400/20">
+            <span className="animate-pulse mr-2 h-2 w-2 rounded-full bg-violet-600 dark:bg-violet-400"></span>
+            <span className="text-gray-700 dark:text-gray-200 font-medium">
+              Launching Soon
+            </span>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </div>
     </div>
   );
 }
