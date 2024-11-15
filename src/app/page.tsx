@@ -34,7 +34,7 @@ export default function Home() {
               Under Development
             </h1>
             <p className="text-gray-700 dark:text-gray-200 text-xl sm:text-2xl max-w-xl mx-auto leading-relaxed font-light">
-              Something extraordinary is in the works. We're crafting a
+              Something extraordinary is in the works. We&apos;re crafting a
               masterpiece just for you.
             </p>
           </div>
